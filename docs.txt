@@ -1,0 +1,21 @@
+To put build in a saperate branch and set it as a github pages for live demo : 
+https://stackoverflow.com/questions/36782467/set-subdirectory-as-website-root-on-github-pages
+Steps : 
+1. make a angular project build with `npm run build-sample`
+2. commit build in master (build for this project is done in docs folder.)
+3. run this command : git subtree push --prefix docs origin <tobe-new branch name> 
+4. above command will create new branch
+5. open that branch in github.com
+6. goto setting in last tab.
+7. select pages from left side. select branch name and select /(root) and then save 
+8. after some time. on github link shown in pages tab, build will load on that link.
+
+---------------
+for publish in npm
+
+just run this command after save all file in projects/rotate-control folder : 
+
+1. npm run outerVersion <version_number>
+2. npm run innerVersion <version_number>
+3. npm run build
+4. npm run publish
