@@ -43,14 +43,6 @@ export class AppComponent {
     console.log("onColorRemove", $event);
   }
 
-  onPickerChange($event) {
-    console.log("onPickerChange", $event);
-  }
-
-  changeColorArray($event) {
-    console.log("changeColorArray", $event);
-  }
-
   colorArrayChange($event) {
     console.log("colorArrayChange", $event);
     this.gradientService.getGradientCss($event).then(result => {
