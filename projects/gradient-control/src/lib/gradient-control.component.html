@@ -1,0 +1,14 @@
+<div class="gradient-picker-wrapper" [ngClass]="containerClass">
+    <div #removeArea class="remove-color-area" [title]="removeAreaTooltip"></div>
+    <div class="color-preview" [ngStyle]="{ background: cssBackground}">
+    </div>
+    <div #addArea class="color-add-area" (dblclick)="addColor($event, activeColorObject.color)" [title]="addColorTooltip">
+        <!-- 'border-color': backgroundColor  -->
+        <button type="color" class="color-control" (click)="$event.stopPropagation();colorControlActivate($event, color, i)" [id]=" type + '-color-' + i" *ngFor="let color of colorArray; let i=index" [ngClass]="{'active-color': activeColorObject.stop == color.stop }"
+            [ngStyle]="{ 'left': color.stopInPercent + '%', 'background-color': color.color}" (mousedown)="touchStart($event, color, i)" (touchstart)="touchStart($event, color, i)" (dblclick)="$event.stopPropagation();openColorPicker(type + '-color-control-' + i)"
+            [title]="colorPinTooltip">
+            <input type="color" class="color-control-color" (change)="changeColor(color.color, i)"
+                [(ngModel)]="color.color" [id]="type + '-color-control-' + i" />
+        </button>
+    </div>
+</div>

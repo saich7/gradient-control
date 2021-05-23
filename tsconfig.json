@@ -5,8 +5,15 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitReturns": true,
+    "paths": {
+      "gradient-control": [
+        "projects/gradient-control/src/lib",
+        "dist/gradient-control/gradient-control",
+        "dist/gradient-control"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
