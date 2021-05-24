@@ -1,11 +1,33 @@
 {
-  "name": "gradient-control",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^11.2.14",
-    "@angular/core": "^11.2.14"
-  },
-  "dependencies": {
-    "tslib": "^2.0.0"
-  }
+    "name": "gradient-control",
+    "version": "0.0.1",
+    "author": "Mayur Kukadiya",
+    "description": "Angular package that provide one reusable component for change gradient colors value by using mouse dragging.",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/contact2mayurkukadiya/gradient-control.git"
+    },
+    "bugs": {
+        "url": "https://github.com/contact2mayurkukadiya/gradient-control/issues",
+        "email": "contact2mayurkukadiya@gmail.com"
+    },
+    "keywords": [
+        "gradient-control",
+        "gradient-ramp-control",
+        "gradient changer",
+        "gradient",
+        "angular component",
+        "angular reusable class",
+        "gradient drag and drop",
+        "gradient chnager component",
+        "angular gradient component"
+    ],
+    "peerDependencies": {
+        "@angular/common": "^11.2.14",
+        "@angular/core": "^11.2.14"
+    },
+    "dependencies": {
+        "tslib": "^2.0.0"
+    }
 }
