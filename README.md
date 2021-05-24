@@ -14,7 +14,7 @@ Preview of Delete Area (Red backgrounded) of control :
 
 ![Preview of control](https://raw.githubusercontent.com/contact2mayurkukadiya/gradient-control/master/src/assets/p_2.png)
 
-## [Live Demo Here](https://contact2mayurkukadiya.github.io/Rotate-Control/)
+## [Live Demo Here](https://contact2mayurkukadiya.github.io/gradient-control/)
 
 ## How to Use Package
 

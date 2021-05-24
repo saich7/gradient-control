@@ -1,6 +1,6 @@
 {
     "name": "gradient-control",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Mayur Kukadiya",
     "description": "Angular package that provide one reusable component for change gradient colors value by using mouse dragging.",
     "private": false,
