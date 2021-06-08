@@ -203,7 +203,13 @@ function colorArrayChange(colorArray) {...}
 
 In above merged directive, `colorArray` variable will be automatic update on value changes.
 
+## Help
+Each and every things that on a internet is written and develop by someone with lot's of efforts and time. You can empower them to do more and best work for others who can freely use that by Buying them a coffee.
 
+[![Buy me a Coffee][1]][2]
+
+ [1]:  https://raw.githubusercontent.com/contact2mayurkukadiya/gradient-control/master/src/assets/bmc-new-logo.webp
+ [2]:  https://www.buymeacoffee.com/mayurKukadiya
 
 ## Further help
 
