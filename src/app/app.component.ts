@@ -12,9 +12,14 @@ export class AppComponent {
     { color: '#0059FF', stop: 0 },
     { color: '#1EC3FA', stop: 1 },
   ];
+  angle: number = 45;
+  angleOption = { radius: 30, borderColor: '#0A7AFE', borderWidth: 2 }
+  type: any = 'Linear'
 
   constructor(public gradientService: GradientControlService) {
-    this.gradientService.getGradientCss(this.colorArray).then(result => {
+    this.changeGradient();
+    this.gradientService.getGradientCss(this.colorArray, { angle: this.angle }).then(result => {
+      console.log('result: ', result);
       this.background = result;
     });
   }
@@ -43,11 +48,9 @@ export class AppComponent {
     console.log("onColorRemove", $event);
   }
 
-  colorArrayChange($event) {
-    console.log("colorArrayChange", $event);
-    this.gradientService.getGradientCss($event).then(result => {
+  changeGradient() {
+    this.gradientService.getGradientCss(this.colorArray, { angle: this.angle, type: this.type }).then(result => {
       this.background = result;
     })
-
   }
 }

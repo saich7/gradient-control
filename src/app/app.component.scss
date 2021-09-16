@@ -1,39 +1,47 @@
 .heading {
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 50px;
-    text-align: center;
-    padding: 25px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  text-align: center;
+  padding: 25px;
+}
+
+.css {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden
 }
 
 .part-1 {
-    width: 50%;
-    text-align: center;
+  width: 50%;
+  text-align: center;
 }
 
 .part-2 {
-    width: 50%;
-    padding: 25px;
-    padding-left: 100px;
-    border-left: 2px solid rgba(255, 255, 255, 1);
-    color: white;
-    font-size: 30px;
+  width: 50%;
+  padding: 25px;
+  padding-left: 100px;
+  border-left: 2px solid rgba(255, 255, 255, 1);
+  color: white;
+  font-size: 30px;
 }
 
 .control {
-    display: block;
+  display: block;
 }
 
 .control-container {
-    background: white;
-    padding: 100px 0px;
-    margin-top: 100px;
+  background: white;
+  padding: 100px 0px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }

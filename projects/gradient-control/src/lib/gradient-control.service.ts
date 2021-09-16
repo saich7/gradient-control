@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 
+interface gradientCSSOptions {
+  type?: 'Linear' | 'Radial'
+  min?: number
+  max?: number,
+  angle?: number
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -7,16 +13,35 @@ export class GradientControlService {
 
   constructor() { }
 
-  getGradientCss(colorstopArray, min: number = 0, max: number = 1): Promise<string> {
+  getGradientCss(colorstopArray, options?: gradientCSSOptions): Promise<string> {
     let tmp = JSON.parse(JSON.stringify(colorstopArray));
     return new Promise((resolve, reject) => {
       if (colorstopArray && colorstopArray.length >= 2) {
-        let cssBackground = 'linear-gradient(to right';
+        let type = options?.type || 'Linear';
+        let angle = options?.angle || 0;
+        let cssBackground = 'linear-gradient(';
+        if (type == 'Radial') {
+          cssBackground = 'radial-gradient('
+        } else if (type == 'Linear') {
+          if (angle) {
+            cssBackground += options?.angle + 'deg'
+          }
+          else {
+            cssBackground += 'to right'
+          }
+        }
+        else {
+
+        }
         this._sortColorArray(tmp, 'stop').then(sortedResult => {
           sortedResult.forEach((element, index) => {
             let stop: number = Number(element.stop);
-            let percent: number = this._getPercentFromValue(stop, min, max);
-            cssBackground += ', ' + element.color + ' ' + percent + '%'
+            let percent: number = this._getPercentFromValue(stop, options?.min || 0, options?.max || 1);
+            if(index == 0 && type == 'Radial') {
+              cssBackground += element.color + ' ' + percent + '%'  
+            } else {
+              cssBackground += ', ' + element.color + ' ' + percent + '%'  
+            }
             element.stopInPercent = percent
           });
           cssBackground += ')'

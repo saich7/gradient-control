@@ -138,7 +138,20 @@ constructor(public gradientService: GradientControlService) {
 ```
 Convert color Array into css : 
 
-> Note : If you used minColorStop and maxColorStop property with your custom boundry value in html with control. then you must have to pass that values into this getGradientCss function like this: service.getGradientCss(colorArray, minColorStop, maxColorStop).then(...)
+```javascript 
+    GradientControlService.getGradientCss = function(colorArray, Options: gradientCSSOptions<optional> )
+
+    // Where
+    Options: gradientCSSOptions = { 
+        type: 'Linear' | 'Radial',      @Optional (default: 'Linear')
+        angle: number,                  @Optional (default: 0)
+        min: number<minColorStop>,      @Optional (default: 0)
+        max: number<maxColorStop>       @Optional (default: 1)
+        }
+```
+
+
+> Note : If you used minColorStop and maxColorStop property with your custom boundry value in html with control. then you must have to pass that values into this getGradientCss function like this: service.getGradientCss(colorArray, {minColorStop: number, maxColorStop: number, gradientType: 'Linear' | 'Radial', angle: number<0-360> }).then(...)
 
 >Note : Don't use function from service that is start with underscore(_). it's for internal use of library. GradientControlService only provice one function that converts color array into css.
 
@@ -199,7 +212,7 @@ function onColorSliding(colorArray) {...}
 function onColorSlideEnd(colorArray) {...}
 function colorArrayChange(colorArray) {...}
 ```
-
+> You can checkout repo to see full example code with rotation angle and gradient type changes.
 
 In above merged directive, `colorArray` variable will be automatic update on value changes.
 

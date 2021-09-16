@@ -93,7 +93,7 @@ export class GradientControlComponent implements OnInit {
         element.stopInPercent = percent;
         element.id = index;
       });
-      this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then((result: string) => {
+      this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then((result: string) => {
         this.cssBackground = result;
         this.activeColorObject = this.colorArray[0];
       });
@@ -103,32 +103,6 @@ export class GradientControlComponent implements OnInit {
   getValuefromPercent(percent): number {
     return Number(((percent * (this.maxColorStop - this.minColorStop) / 100) + this.minColorStop).toFixed(2))
   }
-
-  /* getPercentFromValue(value): number {
-    return ((value - this.minColorStop) / (this.maxColorStop - this.minColorStop)) * 100
-  } */
-
- /*  generateCssFromArray(colorstopArray): Promise<string> {
-    let tmp = JSON.parse(JSON.stringify(colorstopArray));
-    return new Promise((resolve, reject) => {
-      if (colorstopArray && colorstopArray.length >= 2) {
-        let cssBackground = 'linear-gradient(to right';
-        if (typeof this.minColorStop != "undefined" && typeof this.maxColorStop != "undefined") {
-          // this.cssColorArray = [];
-          this.sortColorArray(tmp, 'stop').then(sortedResult => {
-            sortedResult.forEach((element, index) => {
-              let stop: number = Number(element.stop);
-              let percent: number = this.gradientControlService._getPercentFromValue(stop, this.minColorStop, this.maxColorStop);
-              cssBackground += ', ' + element.color + ' ' + percent + '%'
-              element.stopInPercent = percent
-            });
-            cssBackground += ')'
-            resolve(cssBackground);
-          });
-        }
-      }
-    })
-  } */
 
   async addColor(event, color) {
     if (this.colorArray.length >= this.maxColors) {
@@ -143,7 +117,7 @@ export class GradientControlComponent implements OnInit {
         stop: stop,
         stopInPercent: newPercent
       })
-      this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then(result => {
+      this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then(result => {
         this.cssBackground = result;
         this.activeColorObject = this.colorArray[0];
         this.refreshAllId();
@@ -159,7 +133,7 @@ export class GradientControlComponent implements OnInit {
         stop: stop,
         stopInPercent: newPercent
       })
-      this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then(result => {
+      this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then(result => {
         this.cssBackground = result;
         this.activeColorObject = this.colorArray[this.colorArray.length - 1];
         this.refreshAllId();
@@ -179,7 +153,7 @@ export class GradientControlComponent implements OnInit {
             stop: stop,
             stopInPercent: newPercent
           })
-          await this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then(result => {
+          await this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then(result => {
             this.cssBackground = result;
             this.activeColorObject = this.colorArray[index];
             this.refreshAllId();
@@ -265,7 +239,7 @@ export class GradientControlComponent implements OnInit {
         this._activeItem.style.left = newPercent + "%";
         this.colorArray[this._activeDragControl].stop = stop;
         this.colorArray[this._activeDragControl].stopInPercent = newPercent;
-        this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then(result => {
+        this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then(result => {
           this.cssBackground = result;
           if (this._touchStartFlag == true) {
             this.onColorSliding.emit(this.colorArray);
@@ -293,7 +267,7 @@ export class GradientControlComponent implements OnInit {
       if (this.colorArray.length > this.minColors) {
         let index = this.colorArray.findIndex(color => color.id == this.activeColorObject.id)
         this.colorArray.splice(index, 1);
-        this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then(result => {
+        this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then(result => {
           this.cssBackground = result;
           this.refreshAllId();
           this.colorArrayChange.emit(this.colorArray);
@@ -324,7 +298,7 @@ export class GradientControlComponent implements OnInit {
   }
 
   changeColor(color, i) {
-    this.gradientControlService.getGradientCss(this.colorArray, this.minColorStop, this.maxColorStop).then(result => {
+    this.gradientControlService.getGradientCss(this.colorArray, { min: this.minColorStop, max: this.maxColorStop }).then(result => {
       this.cssBackground = result;
       this.colorArrayChange.emit(this.colorArray);
     })
