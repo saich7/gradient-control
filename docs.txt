@@ -15,7 +15,6 @@ for publish in npm
 
 just run this command after save all file in projects/rotate-control folder : 
 
-1. npm run outerVersion <version_number>
-2. npm run innerVersion <version_number>
+1. npm run updateVersion <version_number>
 3. npm run build
 4. npm run publish
