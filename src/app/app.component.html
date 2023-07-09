@@ -4,7 +4,7 @@
     <div class="control-container">
       <gradient-control class="control" (onColorRemove)="onColorRemove($event)" (onColorAdd)="onColorAdd($event)" (onColorControlActivate)="selectPin($event)" (onColorSlideStart)="onColorSlideStart($event)" (onColorSliding)="onColorSliding($event)" (onColorSlideEnd)="onColorSlideEnd($event)"
         [(colorArray)]="colorArray" (colorArrayChange)="changeGradient()"></gradient-control>
-      <rotate-control [(angle)]="angle" [radius]="angleOption.radius" [borderColor]="angleOption.borderColor" [borderWidth]="angleOption.borderWidth" (angleChange)="changeGradient()"></rotate-control>
+<!--      <rotate-control [(angle)]="angle" [radius]="angleOption.radius" [borderColor]="angleOption.borderColor" [borderWidth]="angleOption.borderWidth" (angleChange)="changeGradient()"></rotate-control>-->
       <select [(ngModel)]="type" (change)="changeGradient()">
         <option value="Linear">Linear</option>
         <option value="Radial">Radial</option>
