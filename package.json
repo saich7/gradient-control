@@ -5,9 +5,9 @@
     "ng": "ng",
     "start": "ng serve -o",
     "updateVersion": "cd projects/gradient-control && npm version ",
-    "build": "cd projects/gradient-control && ng build gradient-control --prod",
+    "build": "cd projects/gradient-control && ng build gradient-control --configuration production",
     "publish": "npm run build && cd dist/gradient-control && npm publish",
-    "build-sample": "ng build --prod",
+    "build-sample": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -42,6 +42,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^16.1.0",
     "protractor": "~7.0.0",
     "ts-node": "~10.9.1",
     "typescript": "5.0.4"

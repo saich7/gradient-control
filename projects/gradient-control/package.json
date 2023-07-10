@@ -1,6 +1,6 @@
 {
-    "name": "gradient-control-ng16",
-    "version": "0.0.6",
+    "name": "angular-gradient-control",
+    "version": "1.0.0",
     "author": "Mayur Kukadiya Sai Ch",
     "description": "Angular package that provide one reusable component for change gradient colors value by using mouse dragging.",
     "private": false,
