@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GradientControlModule } from 'gradient-control';
-import { RotateControlModule } from 'rotate-control';
+// import { RotateControlModule } from 'rotate-control';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     CommonModule,
     GradientControlModule,
-    RotateControlModule
+    // RotateControlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

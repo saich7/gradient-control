@@ -1,7 +1,7 @@
 {
-    "name": "gradient-control",
-    "version": "0.0.4",
-    "author": "Mayur Kukadiya",
+    "name": "angular-gradient-control",
+    "version": "1.0.0",
+    "author": "Mayur Kukadiya Sai Ch",
     "description": "Angular package that provide one reusable component for change gradient colors value by using mouse dragging.",
     "private": false,
     "repository": {
@@ -24,10 +24,10 @@
         "angular gradient component"
     ],
     "peerDependencies": {
-        "@angular/common": "^11.2.14",
-        "@angular/core": "^11.2.14"
+        "@angular/common": "^16.1.2",
+        "@angular/core": "^16.1.2"
     },
     "dependencies": {
-        "tslib": "^2.0.0"
+        "tslib": "^2.5.3"
     }
 }
